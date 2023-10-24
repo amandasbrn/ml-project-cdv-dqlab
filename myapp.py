@@ -78,13 +78,13 @@ def heart():
             return features
 
     input_df = user_input_features()
-    img = Image.open("/Users/diraamandas/Desktop/DQLAB_capstone/heart_disease.jpeg")
+    img = Image.open("heart_disease.jpeg")
     st.image(img, width=500)
     if st.sidebar.button('Predict!'):
         df = input_df
         st.write("Inputted data:")
         st.write(df)
-        loaded_model = pickle.load(open('/Users/diraamandas/Desktop/DQLAB_capstone/model_with_mlp.pkl','rb'))
+        loaded_model = pickle.load(open('model_with_mlp.pkl','rb'))
         prediction = loaded_model.predict(df)
         #if prediction == 1.0:
         #    result = ['has cardiovascular disease. Seek professional help immediately.']
